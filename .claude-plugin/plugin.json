@@ -1,0 +1,12 @@
+{
+  "name": "mashburn",
+  "version": "0.1.0",
+  "description": "Michael Aschenborn's curated best practices for Claude Code — CLI tools, plugins, statusline, settings, workflows, and more. Install once, benefit from years of research.",
+  "author": {
+    "name": "Michael Aschenborn",
+    "email": "m.aschenborn@teamorange.de",
+    "url": "https://teamorange.de"
+  },
+  "license": "MIT",
+  "keywords": ["best-practices", "setup", "onboarding", "claude-code", "configuration"]
+}
