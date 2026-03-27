@@ -22,11 +22,11 @@ Examples: `/mashburn:audit plugins`, `/mashburn:audit cli-tools system`, `/mashb
 
 2. **Go deeper than inspect**:
    - `cli-tools`: Check versions, compare against latest, check for conflicting tools, verify PATH order
-   - `plugins`: Check plugin versions, read plugin configs, verify hook registrations, check for conflicts
+   - `plugins`: Check plugin versions, read plugin configs, check for conflicts. For hook verification, read each plugin's `hooks/hooks.json` in `~/.claude/plugins/cache/<plugin>/` — plugin hooks live there, NOT in `~/.claude/settings.json`
    - `statusline`: Read full statusline config, check each segment, verify display works
    - `settings`: Read all relevant config files, check permission model, verify environment variables
    - `workflows`: Check for CLAUDE.md quality, verify git hooks, check CI integration
-   - `hooks`: Read all hook configs, check for redundancy, verify scripts exist and are executable
+   - `hooks`: Read hook configs from TWO sources: `~/.claude/settings.json` (user hooks) AND each plugin's `hooks/hooks.json` in the plugin cache (plugin hooks). Check for redundancy, verify scripts exist and are executable
    - `mcp-servers`: Check server health, verify connections, test tool availability
 
 3. **Cross-reference with other categories**: Note dependencies and interactions between practices.

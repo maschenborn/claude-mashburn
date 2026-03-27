@@ -30,11 +30,11 @@ Examples: `/mashburn:inspect`, `/mashburn:inspect system`, `/mashburn:inspect us
 
 2. **For each practice**, run the check described in its `check` frontmatter field:
    - `cli-tools`: Run `which <tool>` or `<tool> --version` to verify installation
-   - `plugins`: Check `~/.claude/plugins/` and `~/.claude/settings.json` for plugin presence
+   - `plugins`: Check `~/.claude/plugins/cache/` for plugin presence. For hook verification, check the plugin's own `hooks/hooks.json` inside its cache directory — NOT `~/.claude/settings.json` (which only contains user-defined hooks, not plugin hooks)
    - `statusline`: Read statusline config and compare against recommended settings
    - `settings`: Read relevant config files and compare values
    - `workflows`: Check for presence of expected files/configs
-   - `hooks`: Check hooks configuration in settings
+   - `hooks`: Check hooks in TWO locations: `~/.claude/settings.json` for user-defined hooks AND each plugin's `hooks/hooks.json` in `~/.claude/plugins/cache/` for plugin-managed hooks
    - `mcp-servers`: Check MCP server configuration
 
 3. **Present results** as a structured report:
