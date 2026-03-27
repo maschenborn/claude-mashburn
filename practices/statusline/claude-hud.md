@@ -13,7 +13,7 @@ check:
 apply:
   type: manual
   manual: |
-    1. Run: claude plugin marketplace add anthropics/claude-hud
+    1. Run: claude plugin marketplace add jarrodwatts/claude-hud
     2. Run: claude plugin install claude-hud
     3. Restart Claude Code session
     4. Optionally configure via /claude-hud:configure or /claude-hud:setup
@@ -74,4 +74,4 @@ Named presets (`dim`, `red`, `green`, `yellow`, `magenta`, `cyan`, `brightBlue`,
 
 ## References
 
-- [GitHub: anthropics/claude-hud](https://github.com/anthropics/claude-hud)
+- [GitHub: jarrodwatts/claude-hud](https://github.com/jarrodwatts/claude-hud)
