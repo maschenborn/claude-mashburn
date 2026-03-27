@@ -1,0 +1,20 @@
+{
+  "name": "mashburn",
+  "owner": {
+    "name": "Michael Aschenborn",
+    "email": "m.aschenborn@gmail.com"
+  },
+  "metadata": {
+    "description": "Curated best practices for Claude Code setup — CLI tools, plugins, statusline, settings, workflows, and more",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "mashburn",
+      "source": "./",
+      "description": "Michael Aschenborn's curated best practices for Claude Code. Inspect, onboard, audit, and maintain your environment.",
+      "category": "productivity",
+      "tags": ["best-practices", "setup", "onboarding", "configuration", "audit"]
+    }
+  ]
+}

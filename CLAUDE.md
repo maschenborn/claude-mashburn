@@ -74,7 +74,9 @@ tags: [relevant, tags]
 
 ## Developing This Plugin
 
-- Test locally: install via `claude plugins add /Users/maschenborn/Dev/claude-mashburn`
+- Test locally:
+  1. `claude plugins marketplace add /Users/maschenborn/Dev/claude-mashburn`
+  2. `claude plugins install mashburn`
 - After changes to commands/skills/agents: restart Claude Code session to reload
 - After changes to practice files: no restart needed (read at runtime)
 - Validate structure: `ls .claude-plugin/plugin.json` must exist
