@@ -1,7 +1,11 @@
 ---
-name: init
+name: mashburn-init
 description: Onboard your Claude Code environment using mashburn best practices. Checks prerequisites, suggests plugins, and walks you through setup.
-args: "[scope]"
+argument-hint: "[scope]"
+version: 0.1.0
+metadata:
+  bashPattern:
+    - "mashburn.*init|setup.*claude|onboard"
 ---
 
 # mashburn:init — Environment Onboarding
@@ -24,7 +28,7 @@ Examples: `/mashburn:init`, `/mashburn:init system`, `/mashburn:init project`
 
 3. **Walk through each category** of best practices that has entries in `${CLAUDE_PLUGIN_ROOT}/practices/`:
    - For each practice file, read it and determine if it applies
-   - Present recommendations grouped by priority (critical → recommended → nice-to-have)
+   - Present recommendations grouped by priority (critical -> recommended -> nice-to-have)
    - For CLI tool practices: check if the tool is installed, offer install commands
    - For plugin practices: check if the plugin is active
    - For settings practices: compare against current config

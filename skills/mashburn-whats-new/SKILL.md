@@ -1,7 +1,8 @@
 ---
-name: whats-new
+name: mashburn-whats-new
 description: Show recent additions and changes to mashburn best practices. Helps users stay up to date with new recommendations.
-args: "[count]"
+argument-hint: "[count]"
+version: 0.1.0
 ---
 
 # mashburn:whats-new — Recent Changes

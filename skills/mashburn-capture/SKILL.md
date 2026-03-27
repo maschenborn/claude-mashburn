@@ -1,7 +1,11 @@
 ---
-name: capture
+name: mashburn-capture
 description: (Curator only) Interactively capture a new best practice. Guides Michael through documenting a recommendation with proper metadata and check commands.
-args: "[category]"
+argument-hint: "[category]"
+version: 0.1.0
+metadata:
+  bashPattern:
+    - "mashburn.*capture|best.practice|neue.*practice"
 ---
 
 # mashburn:capture — Best Practice Capture

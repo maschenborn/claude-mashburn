@@ -1,7 +1,8 @@
 ---
-name: suggest
+name: mashburn-suggest
 description: Suggest a new best practice to Michael. Helps you formulate your recommendation so he can review and decide whether to add it to the mashburn collection.
-args: "[description]"
+argument-hint: "[description]"
+version: 0.1.0
 ---
 
 # mashburn:suggest — Suggest a Best Practice
@@ -51,7 +52,7 @@ You are helping a user formulate a best-practice suggestion for Michael Aschenbo
 [Any additional context, gotchas, alternatives]
 ```
 
-4. **Save the suggestion** to `${CLAUDE_PLUGIN_ROOT}/suggestions/` as a `.md` file (create the directory if it doesn't exist). Use the format `YYYY-MM-DD-suggestion-name.md`.
+4. **Save the suggestion** to `${CLAUDE_PLUGIN_ROOT}/suggestions/` as a `.md` file. Use the format `YYYY-MM-DD-suggestion-name.md`.
 
 5. **Confirm** to the user that their suggestion has been saved and will be reviewed by Michael.
 

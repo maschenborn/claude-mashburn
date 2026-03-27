@@ -4,28 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**mashburn** is a Claude Code plugin that packages Michael Aschenborn's curated best practices for Claude Code setup. It provides slash commands, skills, and agents that help users inspect, onboard, and maintain their Claude Code environment.
+**mashburn** is a Claude Code plugin that packages Michael Aschenborn's curated best practices for Claude Code setup. It provides skills, agents, and hooks that help users inspect, onboard, and maintain their Claude Code environment.
 
 ## Plugin Architecture
 
 ```
 mashburn/
 ├── .claude-plugin/plugin.json   — Plugin manifest (name: "mashburn")
-├── commands/                    — Slash commands (/mashburn:*)
-│   ├── init.md                  — Onboard environment using best practices
-│   ├── inspect.md               — Audit current setup against practices
-│   ├── whats-new.md             — Show recent practice additions/changes
-│   ├── capture.md               — (Curator) Add new best practice interactively
-│   ├── audit.md                 — Deep-dive audit of a category
-│   └── suggest.md               — Submit a best-practice suggestion for Michael
 ├── agents/
 │   └── inspector.md             — System inspector subagent
-├── skills/                      — Auto-activating skills
-│   ├── inspect/SKILL.md
-│   ├── init/SKILL.md
-│   ├── whats-new/SKILL.md
-│   ├── capture/SKILL.md
-│   └── audit/SKILL.md
+├── skills/                          — Slash commands (/mashburn-*) and auto-activating skills
+│   ├── mashburn-init/SKILL.md       — /mashburn-init — Onboard environment
+│   ├── mashburn-inspect/SKILL.md    — /mashburn-inspect — Audit setup against practices
+│   ├── mashburn-audit/SKILL.md      — /mashburn-audit — Deep-dive category audit
+│   ├── mashburn-capture/SKILL.md    — /mashburn-capture — (Curator) Add new practice
+│   ├── mashburn-suggest/SKILL.md    — /mashburn-suggest — Submit a suggestion
+│   └── mashburn-whats-new/SKILL.md  — /mashburn-whats-new — Recent changes
 ├── hooks/hooks.json             — Event handlers (skeleton)
 ├── practices/                   — THE CONTENT: best practices organized by category
 │   ├── cli-tools/
@@ -46,8 +40,8 @@ mashburn/
 - **Practice files use YAML frontmatter** with `name`, `category`, `scope`, `priority`, `check`, `apply`, `added`, `tags`.
 - **Three scopes**: `system` (machine/OS/CLI), `user` (~/.claude/ config), `project` (per-repo .claude/). Use `all` if a practice applies everywhere.
 - **`${CLAUDE_PLUGIN_ROOT}`** must be used for all intra-plugin path references — never hardcode paths.
-- **Commands are consumer-facing** (`init`, `inspect`, `whats-new`, `audit`, `suggest`) except `capture` which is curator-only.
-- **The `practices/` directory is the source of truth.** Commands and skills read from it; only `capture` writes to it.
+- **Skills are the primary interface.** Consumer-facing: `init`, `inspect`, `whats-new`, `audit`, `suggest`. Curator-only: `capture`. All accessible as `/mashburn-<name>`.
+- **The `practices/` directory is the source of truth.** Skills read from it; only `capture` writes to it.
 
 ## Practice File Format
 
@@ -77,7 +71,7 @@ tags: [relevant, tags]
 - Test locally:
   1. `claude plugins marketplace add /Users/maschenborn/Dev/claude-mashburn`
   2. `claude plugins install mashburn`
-- After changes to commands/skills/agents: restart Claude Code session to reload
+- After changes to skills/agents: restart Claude Code session to reload
 - After changes to practice files: no restart needed (read at runtime)
 - Validate structure: `ls .claude-plugin/plugin.json` must exist
 

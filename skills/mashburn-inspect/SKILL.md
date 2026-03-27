@@ -1,7 +1,16 @@
 ---
-name: inspect
+name: mashburn-inspect
 description: Analyze the current Claude Code environment against mashburn best practices. Reports what's installed, configured, missing, or outdated.
-args: "[scope] [category]"
+argument-hint: "[scope] [category]"
+version: 0.1.0
+metadata:
+  bashPattern:
+    - "which|--version|brew list|npm list -g|pnpm list -g"
+    - "claude.*settings|claude.*config|claude.*plugin"
+  filePattern:
+    - "**/.claude/settings*"
+    - "**/.claude/plugins/**"
+    - "**/CLAUDE.md"
 ---
 
 # mashburn:inspect — Environment Audit

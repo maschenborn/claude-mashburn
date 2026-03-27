@@ -1,7 +1,8 @@
 ---
-name: audit
+name: mashburn-audit
 description: Deep-dive audit of a specific best-practice category. More thorough than inspect — analyzes config files, checks versions, suggests improvements.
-args: "<category> [scope]"
+argument-hint: "<category> [scope]"
+version: 0.1.0
 ---
 
 # mashburn:audit — Deep Category Audit
