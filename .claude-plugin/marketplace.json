@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Curated best practices for Claude Code setup — CLI tools, plugins, statusline, settings, workflows, and more",
-    "version": "0.1.17"
+    "version": "0.1.18"
   },
   "plugins": [
     {
