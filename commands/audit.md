@@ -1,7 +1,7 @@
 ---
 name: audit
 description: Deep-dive audit of a specific best-practice category. More thorough than inspect — analyzes config files, checks versions, suggests improvements.
-args: "<category>"
+args: "<category> [scope]"
 ---
 
 # mashburn:audit — Deep Category Audit
@@ -11,10 +11,13 @@ You are performing a thorough audit of a specific best-practice category.
 ## Arguments
 
 - `category` (required): The category to audit (`cli-tools`, `plugins`, `statusline`, `settings`, `workflows`, `hooks`, `mcp-servers`).
+- `scope` (optional): `system`, `user`, `project`, or omitted for all. Filters practices by their `scope` frontmatter field.
+
+Examples: `/mashburn:audit plugins`, `/mashburn:audit cli-tools system`, `/mashburn:audit settings user`, `/mashburn:audit hooks project`
 
 ## Instructions
 
-1. **Load all practices** from `${CLAUDE_PLUGIN_ROOT}/practices/<category>/`.
+1. **Load practices** from `${CLAUDE_PLUGIN_ROOT}/practices/<category>/`, filtered by `scope` frontmatter if a scope argument was given.
 
 2. **Go deeper than inspect**:
    - `cli-tools`: Check versions, compare against latest, check for conflicting tools, verify PATH order

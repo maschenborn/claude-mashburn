@@ -21,6 +21,7 @@ Each `.md` file in a category directory is one practice. See `/mashburn:capture`
 name: practice-name
 description: One-line summary
 category: cli-tools
+scope: system|user|project|all
 priority: critical|recommended|nice-to-have
 added: 2026-03-27
 check:

@@ -17,6 +17,7 @@ You are helping a user formulate a best-practice suggestion for Michael Aschenbo
 1. **Understand the suggestion**: Ask the user what they'd like to recommend. Gather:
    - What's the recommendation?
    - Which category does it fit? (`cli-tools`, `plugins`, `statusline`, `settings`, `workflows`, `hooks`, `mcp-servers`)
+   - Which scope? (`system` = machine-level, `user` = Claude Code user config, `project` = per-repo)
    - Why do they think it's valuable? What problem does it solve?
    - How did they discover it? (personal experience, article, someone else's setup)
 

@@ -1,11 +1,18 @@
 ---
 name: init
 description: Onboard your Claude Code environment using mashburn best practices. Checks prerequisites, suggests plugins, and walks you through setup.
+args: "[scope]"
 ---
 
 # mashburn:init — Environment Onboarding
 
 You are helping a user set up their Claude Code environment according to mashburn best practices.
+
+## Arguments
+
+- `scope` (optional): `system`, `user`, `project`, or omitted for all. Filters which practices to walk through.
+
+Examples: `/mashburn:init`, `/mashburn:init system`, `/mashburn:init project`
 
 ## Instructions
 

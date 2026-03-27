@@ -43,7 +43,8 @@ mashburn/
 ## Key Design Rules
 
 - **Michael is the sole initiator of best practices.** Claude helps capture, structure, and challenge — but never invents practices autonomously.
-- **Practice files use YAML frontmatter** with `name`, `category`, `priority`, `check`, `apply`, `added`, `tags`.
+- **Practice files use YAML frontmatter** with `name`, `category`, `scope`, `priority`, `check`, `apply`, `added`, `tags`.
+- **Three scopes**: `system` (machine/OS/CLI), `user` (~/.claude/ config), `project` (per-repo .claude/). Use `all` if a practice applies everywhere.
 - **`${CLAUDE_PLUGIN_ROOT}`** must be used for all intra-plugin path references — never hardcode paths.
 - **Commands are consumer-facing** (`init`, `inspect`, `whats-new`, `audit`, `suggest`) except `capture` which is curator-only.
 - **The `practices/` directory is the source of truth.** Commands and skills read from it; only `capture` writes to it.
@@ -55,6 +56,7 @@ mashburn/
 name: practice-name
 description: One-line summary
 category: cli-tools|plugins|statusline|settings|workflows|hooks|mcp-servers
+scope: system|user|project|all
 priority: critical|recommended|nice-to-have
 added: YYYY-MM-DD
 updated: YYYY-MM-DD

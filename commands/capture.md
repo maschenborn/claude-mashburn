@@ -17,6 +17,7 @@ You are helping Michael (the curator) document a new best practice for the mashb
 1. **Ask Michael what he wants to capture** if not already clear from context. Prompt for:
    - What's the recommendation?
    - Which category? (`cli-tools`, `plugins`, `statusline`, `settings`, `workflows`, `hooks`, `mcp-servers`)
+   - Which scope? (`system` = machine/OS/CLI tools, `user` = ~/.claude/ config, `project` = per-repo config, `all` = applies everywhere)
    - Why does this matter? (the reasoning behind it)
    - How to check if it's already in place? (the verification command or check)
    - How to apply it? (install command, config change, etc.)
@@ -31,6 +32,7 @@ You are helping Michael (the curator) document a new best practice for the mashb
 name: practice-name
 description: One-line summary
 category: cli-tools|plugins|statusline|settings|workflows|hooks|mcp-servers
+scope: system|user|project|all
 priority: critical|recommended|nice-to-have
 added: YYYY-MM-DD
 updated: YYYY-MM-DD

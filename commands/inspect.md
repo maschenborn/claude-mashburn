@@ -1,7 +1,7 @@
 ---
 name: inspect
 description: Analyze the current Claude Code environment against mashburn best practices. Reports what's installed, configured, missing, or outdated.
-args: "[category]"
+args: "[scope] [category]"
 ---
 
 # mashburn:inspect — Environment Audit
@@ -10,11 +10,14 @@ You are auditing the user's Claude Code environment against mashburn best practi
 
 ## Arguments
 
+- `scope` (optional): `system`, `user`, `project`, or omitted for all. **System-level** checks the machine (CLI tools, runtimes, OS packages). **User-level** checks `~/.claude/` (settings, plugins, statusline, global CLAUDE.md). **Project-level** checks the current repo (`.claude/`, `.mcp.json`, project CLAUDE.md, hooks).
 - `category` (optional): Limit inspection to a specific category (e.g., `cli-tools`, `plugins`, `statusline`, `settings`, `workflows`, `hooks`, `mcp-servers`). If omitted, inspect all categories.
+
+Examples: `/mashburn:inspect`, `/mashburn:inspect system`, `/mashburn:inspect user plugins`, `/mashburn:inspect project hooks`
 
 ## Instructions
 
-1. **Load all practice files** from `${CLAUDE_PLUGIN_ROOT}/practices/` (or just the specified category subdirectory).
+1. **Load practice files** from `${CLAUDE_PLUGIN_ROOT}/practices/` (or just the specified category subdirectory). Filter by the `scope` frontmatter field: if a scope argument is given (`system`, `user`, or `project`), only load practices with that scope or `scope: all`. If omitted, load all practices.
 
 2. **For each practice**, run the check described in its `check` frontmatter field:
    - `cli-tools`: Run `which <tool>` or `<tool> --version` to verify installation
@@ -28,7 +31,7 @@ You are auditing the user's Claude Code environment against mashburn best practi
 3. **Present results** as a structured report:
 
 ```
-## mashburn inspect report
+## mashburn inspect report (scope: system|user|project|all)
 
 ### CLI Tools
 - [x] tool-name (v1.2.3) — installed and up to date
