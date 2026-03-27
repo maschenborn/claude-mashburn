@@ -19,7 +19,9 @@ mashburn/
 │   ├── mashburn-audit/SKILL.md      — /mashburn-audit — Deep-dive category audit
 │   ├── mashburn-capture/SKILL.md    — /mashburn-capture — (Curator) Add new practice
 │   ├── mashburn-suggest/SKILL.md    — /mashburn-suggest — Submit a suggestion
-│   └── mashburn-whats-new/SKILL.md  — /mashburn-whats-new — Recent changes
+│   ├── mashburn-whats-new/SKILL.md  — /mashburn-whats-new — Recent changes
+│   ├── mashburn-share/SKILL.md      — /mashburn-share — Copy-pasteable install message
+│   └── mashburn-help/SKILL.md       — /mashburn-help — Overview and usage guide
 ├── hooks/hooks.json             — Event handlers (skeleton)
 ├── practices/                   — THE CONTENT: best practices organized by category
 │   ├── cli-tools/
