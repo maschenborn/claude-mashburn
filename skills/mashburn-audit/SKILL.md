@@ -16,6 +16,25 @@ You are performing a thorough audit of the user's Claude Code environment agains
 
 Examples: `/mashburn-audit plugins`, `/mashburn-audit cli-tools system`, `/mashburn-audit full`
 
+## When no argument is given
+
+If the user invokes `/mashburn-audit` without specifying a category, present this exact selection prompt — no variation, no improvisation:
+
+```
+Was soll ich auditieren?
+
+  full         — Kompletter Check aller Kategorien
+  cli-tools    — Kommandozeilen-Tools (git, jq, ffmpeg, ...)
+  plugins      — Claude Code Plugins (context-mode, superpowers, ...)
+  statusline   — Statusline / HUD Konfiguration
+  workflows    — CLAUDE.md, Git-Workflows, Conventions
+  mcp-servers  — MCP Server (PAL, ...)
+  settings     — Einstellungen & Permissions
+  hooks        — Hook-Konfiguration
+```
+
+Wait for the user's answer, then proceed with that category (or full).
+
 ## Instructions for category audit
 
 When a specific category is given:
