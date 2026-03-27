@@ -8,6 +8,4 @@ if [ -d "$PRACTICES_DIR" ]; then
   count=$(find "$PRACTICES_DIR" -name "*.md" ! -name "README.md" -type f 2>/dev/null | wc -l | tr -d ' ')
 fi
 
-cat <<EOF
-{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"🔥 mashburn active — ${count} practices loaded"}}
-EOF
+echo "🔥 mashburn active — ${count} practices loaded"
