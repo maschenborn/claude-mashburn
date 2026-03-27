@@ -13,8 +13,8 @@ check:
 apply:
   type: manual
   manual: |
-    1. Run: claude plugins marketplace add mksglu/context-mode
-    2. Run: claude plugins install context-mode@context-mode
+    1. Run: claude plugin marketplace add mksglu/context-mode
+    2. Run: claude plugin install context-mode@context-mode
     3. Restart Claude Code session
     4. Verify with: /context-mode:ctx-doctor (all checks should show [x])
 tags: [context-window, performance, session-continuity, mcp]

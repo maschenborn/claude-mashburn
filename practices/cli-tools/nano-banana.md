@@ -20,7 +20,7 @@ apply:
     5. If bun link fails: ln -sf ~/tools/nano-banana-2/src/cli.ts ~/.local/bin/nano-banana
     6. Get a Gemini API key at https://aistudio.google.com/apikey
     7. Store it: mkdir -p ~/.nano-banana && echo "GEMINI_API_KEY=<your-key>" > ~/.nano-banana/.env
-    8. Install the Claude Code skill: claude plugins marketplace add kingbootoshi/nano-banana-2-skill && claude plugins install nano-banana
+    8. Install the Claude Code skill: claude plugin marketplace add kingbootoshi/nano-banana-2-skill && claude plugin install nano-banana
 tags: [image-generation, gemini, cli, assets, design]
 ---
 

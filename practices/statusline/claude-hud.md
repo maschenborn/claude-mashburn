@@ -13,8 +13,8 @@ check:
 apply:
   type: manual
   manual: |
-    1. Run: claude plugins marketplace add anthropics/claude-hud
-    2. Run: claude plugins install claude-hud
+    1. Run: claude plugin marketplace add anthropics/claude-hud
+    2. Run: claude plugin install claude-hud
     3. Restart Claude Code session
     4. Optionally configure via /claude-hud:configure or /claude-hud:setup
 tags: [statusline, hud, context, monitoring, ux]
